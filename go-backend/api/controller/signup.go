@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/configs"
 	domain2 "go-backend-clean-architecture/internal/domain"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"golang.org/x/crypto/bcrypt"
@@ -11,7 +11,7 @@ import (
 
 type SignupController struct {
 	SignupUsecase domain2.SignupUsecase
-	Env           *config.Env
+	Env           *configs.Env
 }
 
 func (sc *SignupController) Signup(c *gin.Context) {

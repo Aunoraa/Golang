@@ -3,7 +3,7 @@ package usecase
 import (
 	"context"
 	domain2 "go-backend-clean-architecture/internal/domain"
-	"go-backend-clean-architecture/utils/tokenutil"
+	"go-backend-clean-architecture/internal/utils"
 	"time"
 )
 
@@ -32,9 +32,9 @@ func (su *signupUsecase) GetUserByEmail(c context.Context, email string) (domain
 }
 
 func (su *signupUsecase) CreateAccessToken(user *domain2.User, secret string, expiry int) (accessToken string, err error) {
-	return tokenutil.CreateAccessToken(user, secret, expiry)
+	return utils.CreateAccessToken(user, secret, expiry)
 }
 
 func (su *signupUsecase) CreateRefreshToken(user *domain2.User, secret string, expiry int) (refreshToken string, err error) {
-	return tokenutil.CreateRefreshToken(user, secret, expiry)
+	return utils.CreateRefreshToken(user, secret, expiry)
 }

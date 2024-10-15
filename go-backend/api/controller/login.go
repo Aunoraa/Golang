@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/configs"
 	domain2 "go-backend-clean-architecture/internal/domain"
 	"golang.org/x/crypto/bcrypt"
 	"net/http"
@@ -22,7 +22,7 @@ import (
 
 type LoginController struct {
 	LoginUsecase domain2.LoginUsecase
-	Env          *config.Env
+	Env          *configs.Env
 }
 
 func (lc *LoginController) Login(c *gin.Context) {

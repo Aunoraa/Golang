@@ -2,14 +2,14 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/configs"
 	domain2 "go-backend-clean-architecture/internal/domain"
 	"net/http"
 )
 
 type RefreshTokenController struct {
 	RefreshTokenUsecase domain2.RefreshTokenUsecase
-	Env                 *config.Env
+	Env                 *configs.Env
 }
 
 func (rtc *RefreshTokenController) RefreshToken(c *gin.Context) {

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/mock"
 	"go-backend-clean-architecture/internal/domain"
 	"go-backend-clean-architecture/internal/domain/mocks"
-	"go-backend-clean-architecture/usecase"
+	"go-backend-clean-architecture/internal/usecase"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"testing"
 	"time"

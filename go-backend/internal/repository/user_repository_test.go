@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/internal/repository"
 	"go-backend-clean-architecture/mongo/mocks"
-	"go-backend-clean-architecture/repository"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"testing"
 )

@@ -11,7 +11,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 	route "go-backend-clean-architecture/api/route"
 	"go-backend-clean-architecture/cmd/docs"
-	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/configs"
 	"time"
 )
 
@@ -23,7 +23,7 @@ import (
 
 func main() {
 
-	app := config.App()
+	app := configs.App()
 
 	env := app.Env
 

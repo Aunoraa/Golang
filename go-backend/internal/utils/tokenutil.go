@@ -1,4 +1,4 @@
-package tokenutil
+package utils
 
 import (
 	"fmt"
