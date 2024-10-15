@@ -3,13 +3,13 @@ package controller_test
 import (
 	"encoding/json"
 	"errors"
+	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
+	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain/mocks"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/api/controller"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain/mocks"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -26,7 +26,7 @@ func setUserID(userID string) gin.HandlerFunc {
 func TestFetch(t *testing.T) {
 
 	t.Run("success", func(t *testing.T) {
-		mockProfile := &domain.Profile{
+		mockProfile := &domain2.Profile{
 			Name:  "Test Name",
 			Email: "test@gmail.com",
 		}
@@ -85,7 +85,7 @@ func TestFetch(t *testing.T) {
 		gin.Use(setUserID(userID))
 		gin.GET("/profile", pc.Fetch)
 
-		body, err := json.Marshal(domain.ErrorResponse{Message: customErr.Error()})
+		body, err := json.Marshal(domain2.ErrorResponse{Message: customErr.Error()})
 		assert.NoError(t, err)
 
 		bodyString := string(body)

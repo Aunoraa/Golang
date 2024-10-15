@@ -3,9 +3,9 @@ package repository_test
 import (
 	"context"
 	"errors"
+	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
 	"testing"
 
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo/mocks"
 	"github.com/amitshekhariitbhu/go-backend-clean-architecture/repository"
 	"github.com/stretchr/testify/assert"

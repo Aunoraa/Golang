@@ -1,14 +1,14 @@
 package controller
 
 import (
+	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
 	"net/http"
 
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/gin-gonic/gin"
 )
 
 type ProfileController struct {
-	ProfileUsecase domain.ProfileUsecase
+	ProfileUsecase domain2.ProfileUsecase
 }
 
 func (pc *ProfileController) Fetch(c *gin.Context) {
@@ -16,7 +16,7 @@ func (pc *ProfileController) Fetch(c *gin.Context) {
 
 	profile, err := pc.ProfileUsecase.GetProfileByID(c, userID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, domain.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusInternalServerError, domain2.ErrorResponse{Message: err.Error()})
 		return
 	}
 

@@ -4,13 +4,13 @@ import (
 	"time"
 
 	route "github.com/amitshekhariitbhu/go-backend-clean-architecture/api/route"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/bootstrap"
+	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 
-	app := bootstrap.App()
+	app := config.App()
 
 	env := app.Env
 

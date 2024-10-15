@@ -2,9 +2,8 @@ package usecase
 
 import (
 	"context"
+	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
 	"time"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 )
 
 type taskUsecase struct {

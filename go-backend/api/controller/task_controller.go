@@ -1,23 +1,23 @@
 package controller
 
 import (
+	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
 	"net/http"
 
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/domain"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type TaskController struct {
-	TaskUsecase domain.TaskUsecase
+	TaskUsecase domain2.TaskUsecase
 }
 
 func (tc *TaskController) Create(c *gin.Context) {
-	var task domain.Task
+	var task domain2.Task
 
 	err := c.ShouldBind(&task)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, domain.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusBadRequest, domain2.ErrorResponse{Message: err.Error()})
 		return
 	}
 
@@ -26,17 +26,17 @@ func (tc *TaskController) Create(c *gin.Context) {
 
 	task.UserID, err = primitive.ObjectIDFromHex(userID)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, domain.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusBadRequest, domain2.ErrorResponse{Message: err.Error()})
 		return
 	}
 
 	err = tc.TaskUsecase.Create(c, &task)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, domain.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusInternalServerError, domain2.ErrorResponse{Message: err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, domain.SuccessResponse{
+	c.JSON(http.StatusOK, domain2.SuccessResponse{
 		Message: "Task created successfully",
 	})
 }
@@ -46,7 +46,7 @@ func (u *TaskController) Fetch(c *gin.Context) {
 
 	tasks, err := u.TaskUsecase.FetchByUserID(c, userID)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, domain.ErrorResponse{Message: err.Error()})
+		c.JSON(http.StatusInternalServerError, domain2.ErrorResponse{Message: err.Error()})
 		return
 	}
 
