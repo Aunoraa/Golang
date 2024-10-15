@@ -13,7 +13,7 @@ You can connect with me on:
 - [LinkedIn](https://www.linkedin.com/in/le-tuan-b70055254/)
 - [GitHub](https://github.com/Aunoraa)
 - lekhactuan1412@gmail.com
-- 0332328904
+- 0916369594
 
 
 ## Major Packages used in this project
@@ -56,6 +56,11 @@ mockery --dir=domain --output=domain/mocks --outpkg=mocks --all
 
 # Generate mock code for the database
 mockery --dir=mongo --output=mongo/mocks --outpkg=mocks --all
+```
+
+### SWAGGER UI
+```azure
+http://localhost:8080/swagger/index.html
 ```
 
 Whenever you make changes in the interfaces of these use-cases, repositories, or databases, you need to run the corresponding command to regenerate the mock code for testing.
