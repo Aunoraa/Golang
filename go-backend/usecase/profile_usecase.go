@@ -2,7 +2,7 @@ package usecase
 
 import (
 	"context"
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
+	domain2 "go-backend-clean-architecture/internal/domain"
 	"time"
 )
 

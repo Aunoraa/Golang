@@ -1,15 +1,14 @@
 package route
 
 import (
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"time"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/api/controller"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/repository"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/usecase"
 	"github.com/gin-gonic/gin"
+	"go-backend-clean-architecture/api/controller"
+	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/mongo"
+	"go-backend-clean-architecture/repository"
+	"go-backend-clean-architecture/usecase"
+	"time"
 )
 
 func NewSignupRouter(env *config.Env, timeout time.Duration, db mongo.Database, group *gin.RouterGroup) {

@@ -3,10 +3,9 @@ package config
 import (
 	"context"
 	"fmt"
+	"go-backend-clean-architecture/mongo"
 	"log"
 	"time"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
 )
 
 func NewMongoDatabase(env *Env) mongo.Client {

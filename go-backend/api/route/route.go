@@ -1,12 +1,11 @@
 package route
 
 import (
-	"time"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/api/middleware"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
 	"github.com/gin-gonic/gin"
+	"go-backend-clean-architecture/api/middleware"
+	"go-backend-clean-architecture/config"
+	"go-backend-clean-architecture/mongo"
+	"time"
 )
 
 func Setup(env *config.Env, timeout time.Duration, db mongo.Database, gin *gin.Engine) {

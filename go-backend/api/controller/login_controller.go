@@ -1,13 +1,13 @@
 package controller
 
 import (
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
+	domain2 "go-backend-clean-architecture/internal/domain"
 	"net/http"
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
 	"github.com/gin-gonic/gin"
+	"go-backend-clean-architecture/config"
 )
 
 type LoginController struct {

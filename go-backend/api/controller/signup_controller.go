@@ -1,13 +1,12 @@
 package controller
 
 import (
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"net/http"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
 	"github.com/gin-gonic/gin"
+	"go-backend-clean-architecture/config"
+	domain2 "go-backend-clean-architecture/internal/domain"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"golang.org/x/crypto/bcrypt"
+	"net/http"
 )
 
 type SignupController struct {

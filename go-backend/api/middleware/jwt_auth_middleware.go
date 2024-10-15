@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/utils/tokenutil"
+	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/utils/tokenutil"
 	"net/http"
 	"strings"
 

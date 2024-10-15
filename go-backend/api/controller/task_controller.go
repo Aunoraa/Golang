@@ -1,11 +1,10 @@
 package controller
 
 import (
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	domain2 "go-backend-clean-architecture/internal/domain"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"net/http"
 )
 
 type TaskController struct {

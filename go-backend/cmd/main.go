@@ -1,11 +1,10 @@
 package main
 
 import (
-	"time"
-
-	route "github.com/amitshekhariitbhu/go-backend-clean-architecture/api/route"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/config"
 	"github.com/gin-gonic/gin"
+	route "go-backend-clean-architecture/api/route"
+	"go-backend-clean-architecture/config"
+	"time"
 )
 
 func main() {

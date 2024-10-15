@@ -1,10 +1,9 @@
 package controller
 
 import (
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	domain2 "go-backend-clean-architecture/internal/domain"
+	"net/http"
 )
 
 type ProfileController struct {

@@ -2,9 +2,8 @@ package repository
 
 import (
 	"context"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
+	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/mongo"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

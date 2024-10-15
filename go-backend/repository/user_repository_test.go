@@ -3,14 +3,13 @@ package repository_test
 import (
 	"context"
 	"errors"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"testing"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo/mocks"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/repository"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/mongo/mocks"
+	"go-backend-clean-architecture/repository"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"testing"
 )
 
 func TestCreate(t *testing.T) {

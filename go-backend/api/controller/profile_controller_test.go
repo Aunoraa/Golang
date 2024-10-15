@@ -3,17 +3,16 @@ package controller_test
 import (
 	"encoding/json"
 	"errors"
-	domain2 "github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain/mocks"
-	"net/http"
-	"net/http/httptest"
-	"testing"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/api/controller"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"go-backend-clean-architecture/api/controller"
+	domain2 "go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/internal/domain/mocks"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"net/http"
+	"net/http/httptest"
+	"testing"
 )
 
 func setUserID(userID string) gin.HandlerFunc {

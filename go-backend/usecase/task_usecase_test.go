@@ -3,15 +3,14 @@ package usecase_test
 import (
 	"context"
 	"errors"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain"
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/internal/domain/mocks"
-	"testing"
-	"time"
-
-	"github.com/amitshekhariitbhu/go-backend-clean-architecture/usecase"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"go-backend-clean-architecture/internal/domain"
+	"go-backend-clean-architecture/internal/domain/mocks"
+	"go-backend-clean-architecture/usecase"
 	"go.mongodb.org/mongo-driver/bson/primitive"
+	"testing"
+	"time"
 )
 
 func TestFetchByUserID(t *testing.T) {

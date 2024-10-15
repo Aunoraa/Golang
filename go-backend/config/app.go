@@ -1,6 +1,6 @@
 package config
 
-import "github.com/amitshekhariitbhu/go-backend-clean-architecture/mongo"
+import "go-backend-clean-architecture/mongo"
 
 type Application struct {
 	Env   *Env
