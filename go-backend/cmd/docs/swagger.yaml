@@ -1,0 +1,10 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample API documentation for the Go Backend Clean Architecture
+    project.
+  title: API Documentation
+  version: "1.0"
+paths: {}
+swagger: "2.0"

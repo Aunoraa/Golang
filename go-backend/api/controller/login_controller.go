@@ -1,14 +1,24 @@
 package controller
 
 import (
-	domain2 "go-backend-clean-architecture/internal/domain"
-	"net/http"
-
-	"golang.org/x/crypto/bcrypt"
-
 	"github.com/gin-gonic/gin"
 	"go-backend-clean-architecture/config"
+	domain2 "go-backend-clean-architecture/internal/domain"
+	"golang.org/x/crypto/bcrypt"
+	"net/http"
 )
+
+// @Summary Login user
+// @Description Login user with email and password
+// @Tags auth
+// @Accept json
+// @Produce json
+// @Param loginRequest body domain2.LoginRequest true "Login request"
+// @Success 200 {object} domain2.LoginResponse
+// @Failure 400 {object} domain2.ErrorResponse
+// @Failure 404 {object} domain2.ErrorResponse
+// @Failure 500 {object} domain2.ErrorResponse
+// @Router /login [post]
 
 type LoginController struct {
 	LoginUsecase domain2.LoginUsecase
