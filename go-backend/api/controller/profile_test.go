@@ -23,7 +23,6 @@ func setUserID(userID string) gin.HandlerFunc {
 }
 
 func TestFetch(t *testing.T) {
-
 	t.Run("success", func(t *testing.T) {
 		mockProfile := &domain2.Profile{
 			Name:  "Test Name",
@@ -34,30 +33,26 @@ func TestFetch(t *testing.T) {
 		userID := userObjectID.Hex()
 
 		mockProfileUsecase := new(mocks.ProfileUsecase)
-
 		mockProfileUsecase.On("GetProfileByID", mock.Anything, userID).Return(mockProfile, nil)
 
-		gin := gin.Default()
-
+		router := gin.Default()
 		rec := httptest.NewRecorder()
 
 		pc := &controller.ProfileController{
 			ProfileUsecase: mockProfileUsecase,
 		}
 
-		gin.Use(setUserID(userID))
-		gin.GET("/profile", pc.Fetch)
+		router.Use(setUserID(userID))
+		router.GET("/profile", pc.Fetch)
 
 		body, err := json.Marshal(mockProfile)
 		assert.NoError(t, err)
 
 		bodyString := string(body)
-
 		req := httptest.NewRequest(http.MethodGet, "/profile", nil)
-		gin.ServeHTTP(rec, req)
+		router.ServeHTTP(rec, req)
 
 		assert.Equal(t, http.StatusOK, rec.Code)
-
 		assert.Equal(t, bodyString, rec.Body.String())
 
 		mockProfileUsecase.AssertExpectations(t)
@@ -68,35 +63,30 @@ func TestFetch(t *testing.T) {
 		userID := userObjectID.Hex()
 
 		mockProfileUsecase := new(mocks.ProfileUsecase)
-
-		customErr := errors.New("Unexpected")
+		customErr := errors.New("unexpected")
 
 		mockProfileUsecase.On("GetProfileByID", mock.Anything, userID).Return(nil, customErr)
 
-		gin := gin.Default()
-
+		router := gin.Default()
 		rec := httptest.NewRecorder()
 
 		pc := &controller.ProfileController{
 			ProfileUsecase: mockProfileUsecase,
 		}
 
-		gin.Use(setUserID(userID))
-		gin.GET("/profile", pc.Fetch)
+		router.Use(setUserID(userID))
+		router.GET("/profile", pc.Fetch)
 
 		body, err := json.Marshal(domain2.ErrorResponse{Message: customErr.Error()})
 		assert.NoError(t, err)
 
 		bodyString := string(body)
-
 		req := httptest.NewRequest(http.MethodGet, "/profile", nil)
-		gin.ServeHTTP(rec, req)
+		router.ServeHTTP(rec, req)
 
 		assert.Equal(t, http.StatusInternalServerError, rec.Code)
-
 		assert.Equal(t, bodyString, rec.Body.String())
 
 		mockProfileUsecase.AssertExpectations(t)
 	})
-
 }
